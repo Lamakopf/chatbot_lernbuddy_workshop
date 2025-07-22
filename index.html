@@ -15,6 +15,7 @@
       --accent: #006edc;
       --radius: 0.75rem;
       --shadow: 0 4px 12px rgba(0, 0, 0, 0.07);
+      --muted: #f0f2f5;
     }
 
     * {
@@ -121,15 +122,67 @@
       opacity: 0.6;
       font-style: italic;
     }
+
+    /* Prompt-Hilfe Spezialisierungen */
+    .prompt-help summary {
+      font-size: 1rem;
+    }
+
+    .prompt-help ul {
+      list-style: none;
+      margin-left: 0;
+      padding-left: 0;
+    }
+
+    .prompt-help li + li {
+      margin-top: 0.35rem;
+    }
+
+    .prompt-help strong {
+      display: inline-block;
+      width: 1.2rem;
+      color: var(--accent);
+    }
+
+    .prompt-help {
+      background: var(--muted);
+    }
   </style>
 </head>
 <body>
-  <header>
+ <header>
     <h1>Chatbot‑Workshop · Gruppen‑Aufträge</h1>
-    <p>Klick deine Gruppe an, um den Arbeitsauftrag zu öffnen. <br />(Max. 2 Minuten Präsentation pro Gruppe)</p>
+
+    <ul class="intro-list">
+      <li>Gruppenarbeit – max. 2 Min. Präsentation 👥</li>
+      <li>Thema + vorgegebene Präsentationsform 💡</li>
+      <li>Frage muss beantwortet werden! ❓</li>
+      <li>ChatGPT als Hilfe – aber eigene Ideen nutzen! 🤖</li>
+      <li>Rollen verteilen (wer macht was?) 🎭</li>
+      <li>20 Min. Vorbereitung – dann Präsentation ⏳</li>
+    </ul>
+
+    <p>Klick deine Gruppe an, um den Arbeitsauftrag zu öffnen.</p>
   </header>
 
+
   <main>
+    <!-- PROMPT‑HILFE (PRAKTIK) -->
+    <details class="prompt-help" open>
+      <summary>Prompt‑Hilfe · PRAKTIK‑Formel</summary>
+      <div class="content">
+        <ul>
+          <li><strong>P</strong> Persona – Wer soll antworten?</li>
+          <li><strong>R</strong> Rahmen – Was soll erstellt werden?</li>
+          <li><strong>A</strong> Audience – Für wen ist das gedacht?</li>
+          <li><strong>K</strong> Kriterien – Welche Bedingungen müssen erfüllt sein?</li>
+          <li><strong>T</strong> Ton – Wie klingt die Antwort?</li>
+          <li><strong>I</strong> Input – Was will ich mit dem Ergebnis erreichen?</li>
+          <li><strong>K</strong> Kontrolle – Woran erkenne ich, ob das Ergebnis passt?</li>
+        </ul>
+      </div>
+    </details>
+
     <section class="list">
       <!-- Gruppe 1 -->
       <details>
@@ -151,7 +204,7 @@
         <summary>Gruppe 2 · Rap‑Battle</summary>
         <div class="content">
           <h3>Arbeitsauftrag</h3>
-          <p>Schreibt einen Rap‑Battle‑Text über die industrielle Revolution und ihre gesellschaftlichen Folgen.</p>
+          <p>Schreibt einen Rap‑Battle‑Text (max. 2 Minuten) über die industrielle Revolution und ihre gesellschaftlichen Folgen.</p>
           <p><strong>Rollenverteilung</strong>:</p>
           <ul>
             <li>Unternehmer:in</li>
@@ -171,7 +224,7 @@
         <summary>Gruppe 3 · Werbespot</summary>
         <div class="content">
           <h3>Arbeitsauftrag</h3>
-          <p>Erstellt einen Werbespot‑Text, der das Thema Plattentektonik erklärt. Ihr seid eine Reiseagentur, die spektakuläre Naturereignisse wie Vulkanausbrüche und Erdbeben vermarktet.</p>
+          <p>Erstellt einen Werbespot‑Text (max. 2 Minuten), der das Thema Plattentektonik erklärt. Ihr seid eine Reiseagentur, die spektakuläre Naturereignisse wie Vulkanausbrüche und Erdbeben vermarktet.</p>
           <ul>
             <li>🔹 Beantwortet klar: <em>Wie bewegen sich Kontinente und was sind die Folgen?</em></li>
             <li>🔹 Setzt ChatGPT ein, aber bleibt eigenständig.</li>
@@ -186,7 +239,7 @@
         <summary>Gruppe 4 · Talkshow</summary>
         <div class="content">
           <h3>Arbeitsauftrag</h3>
-          <p>Gestaltet eine kurze Talkshow zum Thema Klimawandel und erneuerbare Energien.</p>
+          <p>Gestaltet eine kurze Talkshow (max. 2 Minuten) zum Thema Klimawandel und erneuerbare Energien.</p>
           <ul>
             <li>🔹 Beantwortet klar: <em>Wie sieht die Energieversorgung der Zukunft aus?</em></li>
             <li>🔹 Kreativ bleiben, ChatGPT nur als Unterstützung.</li>
@@ -201,7 +254,7 @@
         <summary>Gruppe 5 · Nachrichtensendung</summary>
         <div class="content">
           <h3>Arbeitsauftrag</h3>
-          <p>Erstellt eine kurze Nachrichtensendung über die Erfindung des Buchdrucks durch Johannes Gutenberg.</p>
+          <p>Erstellt eine kurze Nachrichtensendung (max. 2 Minuten) über die Erfindung des Buchdrucks durch Johannes Gutenberg.</p>
           <ul>
             <li>🔹 Beantwortet klar: <em>Warum war Gutenbergs Erfindung so revolutionär?</em></li>
             <li>🔹 ChatGPT nutzen, aber eigene Ideen einfließen lassen.</li>

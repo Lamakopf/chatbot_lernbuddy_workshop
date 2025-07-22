@@ -147,6 +147,31 @@
     .prompt-help {
       background: var(--muted);
     }
+
+        /* Prompt-Hilfe Spezialisierungen */
+    .auftrag-help summary {
+      font-size: 1rem;
+    }
+
+    .auftrag-help ul {
+      list-style: none;
+      margin-left: 0;
+      padding-left: 0;
+    }
+
+    .auftrag-help li + li {
+      margin-top: 0.35rem;
+    }
+
+    .auftrag-help strong {
+      display: inline-block;
+      width: 1.2rem;
+      color: var(--accent);
+    }
+
+    .auftrag-help {
+      background: var(--muted);
+    }
   </style>
 </head>
 <body>
@@ -156,7 +181,7 @@
 
 
   <main>
-        <details class="prompt-help" open>
+      <details class="auftrag-help" open>
       <summary>Arbeitsauftrag</summary>
       <div class="content">
         <ul>
@@ -168,8 +193,7 @@
       <li>20 Min. Vorbereitung – dann Präsentation ⏳</li>
         </ul>
       </div>
-
-    <p>Klick deine Gruppe an, um den Arbeitsauftrag zu öffnen.</p>
+  <p>Klick deine Gruppe an, um den Arbeitsauftrag zu öffnen.</p>
   </header>
     </details>
     

@@ -4,9 +4,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Chatbot‑Workshop · Gruppen‑Aufträge</title>
+
   <!-- Google Font: Inter – moderne, gut lesbare Schrift -->
   <link rel="preconnect" href="https://fonts.gstatic.com" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+
   <style>
     :root {
       --bg: #f9fafb;
@@ -31,14 +33,15 @@
       line-height: 1.6;
     }
 
+    /* ----------  HEADER ---------- */
     header {
       text-align: center;
-      padding: 2rem 1rem 1rem;
+      padding: 2rem 1rem 1.25rem;
     }
 
     header h1 {
-      font-size: 1.75rem;
-      margin-bottom: 0.25rem;
+      font-size: 2rem;
+      margin-bottom: 0.75rem;
     }
 
     header p {
@@ -46,20 +49,20 @@
       opacity: 0.8;
     }
 
+    /* ----------  LAYOUT ---------- */
     main {
       padding: 1rem;
-      max-width: 600px; /* bewusst schmal, damit alles untereinander bleibt */
+      max-width: 600px; /* Mobile‑First, schmale Spalte → gute Lesbarkeit */
       margin: 0 auto;
     }
 
-    /* LIST statt Grid → alles untereinander */
     .list {
       display: flex;
       flex-direction: column;
       gap: 1rem;
     }
 
-    /* CARD (Details Element) */
+    /* ----------  DETAILS / CARDS ---------- */
     details {
       width: 100%;
       background: var(--card-bg);
@@ -73,18 +76,18 @@
       transform: translateY(-2px);
     }
 
-    /* Hide default marker */
+    /* summary (Header) */
     details > summary {
       list-style: none;
       cursor: pointer;
       padding: 1rem 1rem 1rem 2.25rem; /* Platz für Pfeil */
       position: relative;
       font-weight: 600;
-      font-size: 1.1rem;
+      font-size: 1.05rem;
     }
 
     details > summary::before {
-      content: "➤"; /* kompakter Pfeil */
+      content: "➤";
       position: absolute;
       left: 1rem;
       font-size: 1rem;
@@ -97,9 +100,9 @@
       transform: rotate(180deg);
     }
 
-    /* CONTENT */
+    /* card body */
     .content {
-      padding: 0 1.25rem 1.25rem 1.25rem;
+      padding: 0 1.25rem 1.25rem;
       font-size: 0.95rem;
     }
 
@@ -123,82 +126,53 @@
       font-style: italic;
     }
 
-    /* Prompt-Hilfe Spezialisierungen */
-    .prompt-help summary {
+    /* ----------  INTRO‑LIST ---------- */
+    .intro-list {
+      list-style: disc;
+      margin-left: 1.2rem;
+      margin-bottom: 0.5rem;
       font-size: 1rem;
+      text-align: left;
     }
 
-    .prompt-help ul {
-      list-style: none;
-      margin-left: 0;
-      padding-left: 0;
-    }
-
-    .prompt-help li + li {
+    .intro-list li + li {
       margin-top: 0.35rem;
     }
 
-    .prompt-help strong {
-      display: inline-block;
-      width: 1.2rem;
-      color: var(--accent);
-    }
-
-    .prompt-help {
-      background: var(--muted);
-    }
-
-        /* Prompt-Hilfe Spezialisierungen */
-    .auftrag-help summary {
-      font-size: 1rem;
-    }
-
-    .auftrag-help ul {
-      list-style: none;
-      margin-left: 0;
-      padding-left: 0;
-    }
-
-    .auftrag-help li + li {
-      margin-top: 0.35rem;
-    }
-
-    .auftrag-help strong {
-      display: inline-block;
-      width: 1.2rem;
-      color: var(--accent);
-    }
-
-    .auftrag-help {
+    /* ----------  HILFE‑KARTEN ---------- */
+    .help-card {
       background: var(--muted);
     }
   </style>
 </head>
+
 <body>
- <header>
-    <h1>Chatbot‑Workshop/h1>
-    </h1>header>
+  <!-- ---------------------- HEADER ---------------------- -->
+  <header>
+    <h1>Chatbot‑Workshop · Gruppen‑Aufträge</h1>
+    <p>Klick deine Gruppe an, um den Arbeitsauftrag zu öffnen.</p>
+  </header>
 
-
+  <!-- ---------------------- MAIN ---------------------- -->
   <main>
-      <details class="auftrag-help" open>
+
+    <!-- Arbeits‑Auftrag (Bullet‑Liste) -->
+    <details class="help-card" open>
       <summary>Arbeitsauftrag</summary>
       <div class="content">
-        <ul>
-      <li>Gruppenarbeit – max. 2 Min. Präsentation 👥</li>
-      <li>Thema + vorgegebene Präsentationsform 💡</li>
-      <li>Frage muss beantwortet werden! ❓</li>
-      <li>ChatGPT als Hilfe – aber eigene Ideen nutzen! 🤖</li>
-      <li>Rollen verteilen (wer macht was?) 🎭</li>
-      <li>20 Min. Vorbereitung – dann Präsentation ⏳</li>
+        <ul class="intro-list">
+          <li>Gruppenarbeit – max. 2 Min. Präsentation 👥</li>
+          <li>Thema + vorgegebene Präsentationsform 💡</li>
+          <li>Frage muss beantwortet werden ❓</li>
+          <li>ChatGPT als Hilfe – aber eigene Ideen nutzen 🤖</li>
+          <li>Rollen verteilen (wer macht was?) 🎭</li>
+          <li>20 Min. Vorbereitung – dann Präsentation ⏳</li>
         </ul>
       </div>
-  <p>Klick deine Gruppe an, um den Arbeitsauftrag zu öffnen.</p>
-  </header>
     </details>
-    
-    <!-- PROMPT‑HILFE (PRAKTIK) -->
-    <details class="prompt-help" open>
+
+    <!-- Prompt‑Hilfe (PRAKTIK) -->
+    <details class="help-card" open>
       <summary>Prompt‑Hilfe · PRAKTIK‑Formel</summary>
       <div class="content">
         <ul>
@@ -213,8 +187,9 @@
       </div>
     </details>
 
+    <!-- Gruppen‑Aufträge -->
     <section class="list">
-      <!-- Gruppe 1 -->
+      <!-- Gruppe 1 -->
       <details>
         <summary>Gruppe 1 · Märchen‑Präsentation</summary>
         <div class="content">
@@ -229,7 +204,7 @@
         </div>
       </details>
 
-      <!-- Gruppe 2 -->
+      <!-- Gruppe 2 -->
       <details>
         <summary>Gruppe 2 · Rap‑Battle</summary>
         <div class="content">
@@ -249,7 +224,7 @@
         </div>
       </details>
 
-      <!-- Gruppe 3 -->
+      <!-- Gruppe 3 -->
       <details>
         <summary>Gruppe 3 · Werbespot</summary>
         <div class="content">
@@ -264,7 +239,7 @@
         </div>
       </details>
 
-      <!-- Gruppe 4 -->
+      <!-- Gruppe 4 -->
       <details>
         <summary>Gruppe 4 · Talkshow</summary>
         <div class="content">
@@ -279,7 +254,7 @@
         </div>
       </details>
 
-      <!-- Gruppe 5 -->
+      <!-- Gruppe 5 -->
       <details>
         <summary>Gruppe 5 · Nachrichtensendung</summary>
         <div class="content">

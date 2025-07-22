@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chatbot‑Workshop · Gruppen‑Aufträge</title>
+  <!-- Google Font: Inter – moderne, gut lesbare Schrift -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #f9fafb;
+      --card-bg: #ffffff;
+      --text: #111111;
+      --accent: #006edc;
+      --radius: 0.75rem;
+      --shadow: 0 4px 12px rgba(0, 0, 0, 0.07);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html, body {
+      font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    header {
+      text-align: center;
+      padding: 2rem 1rem 1rem;
+    }
+
+    header h1 {
+      font-size: 1.75rem;
+      margin-bottom: 0.25rem;
+    }
+
+    header p {
+      font-size: 1rem;
+      opacity: 0.8;
+    }
+
+    main {
+      padding: 1rem;
+      max-width: 600px; /* bewusst schmal, damit alles untereinander bleibt */
+      margin: 0 auto;
+    }
+
+    /* LIST statt Grid → alles untereinander */
+    .list {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    /* CARD (Details Element) */
+    details {
+      width: 100%;
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      transition: transform 0.2s ease;
+    }
+
+    details:hover {
+      transform: translateY(-2px);
+    }
+
+    /* Hide default marker */
+    details > summary {
+      list-style: none;
+      cursor: pointer;
+      padding: 1rem 1rem 1rem 2.25rem; /* Platz für Pfeil */
+      position: relative;
+      font-weight: 600;
+      font-size: 1.1rem;
+    }
+
+    details > summary::before {
+      content: "➤"; /* kompakter Pfeil */
+      position: absolute;
+      left: 1rem;
+      font-size: 1rem;
+      transform: rotate(90deg);
+      transition: transform 0.2s ease;
+      color: var(--accent);
+    }
+
+    details[open] > summary::before {
+      transform: rotate(180deg);
+    }
+
+    /* CONTENT */
+    .content {
+      padding: 0 1.25rem 1.25rem 1.25rem;
+      font-size: 0.95rem;
+    }
+
+    .content h3 {
+      margin-top: 0.75rem;
+      margin-bottom: 0.5rem;
+      font-size: 1.05rem;
+    }
+
+    .content ul {
+      margin-left: 1.2rem;
+      margin-top: 0.5rem;
+    }
+
+    .content li {
+      margin-bottom: 0.4rem;
+    }
+
+    .placeholder {
+      opacity: 0.6;
+      font-style: italic;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Chatbot‑Workshop · Gruppen‑Aufträge</h1>
+    <p>Klick deine Gruppe an, um den Arbeitsauftrag zu öffnen. <br />(Max. 2 Minuten Präsentation pro Gruppe)</p>
+  </header>
+
+  <main>
+    <section class="list">
+      <!-- Gruppe 1 -->
+      <details>
+        <summary>Gruppe 1 · Märchen‑Präsentation</summary>
+        <div class="content">
+          <h3>Arbeitsauftrag</h3>
+          <p>Erzählt die Entdeckung der DNA als kurzes Märchen mit dem Titel <strong>„Die geheime Sprache des Lebens“</strong>. Eure Geschichte soll das Thema spannend und verständlich vermitteln.</p>
+          <ul>
+            <li>🔹 Beantwortet klar: <em>Wie haben Watson und Crick die Genetik revolutioniert?</em></li>
+            <li>🔹 Seid kreativ! Nutzt ChatGPT als Unterstützung, aber bringt eigene Ideen ein.</li>
+            <li>🔹 Plant eure Rollen: Wer erzählt das Märchen? Wer spielt wichtige Figuren?</li>
+            <li>🔹 Zeitlimit: max. 2 Minuten</li>
+          </ul>
+        </div>
+      </details>
+
+      <!-- Gruppe 2 -->
+      <details>
+        <summary>Gruppe 2 · Rap‑Battle</summary>
+        <div class="content">
+          <h3>Arbeitsauftrag</h3>
+          <p>Schreibt einen Rap‑Battle‑Text (max. 2 Minuten) über die industrielle Revolution und ihre gesellschaftlichen Folgen.</p>
+          <p><strong>Rollenverteilung</strong>:</p>
+          <ul>
+            <li>Unternehmer:in</li>
+            <li>Fabrikarbeiter:in</li>
+          </ul>
+          <ul>
+            <li>🔹 Beantwortet klar: <em>Wie hat die industrielle Revolution die Gesellschaft verändert?</em></li>
+            <li>🔹 Nutzt ChatGPT kreativ, aber ergänzt eigene Ideen.</li>
+            <li>🔹 Plant die Rollen & Moderator:in.</li>
+            <li>🔹 Zeitlimit: max. 2 Minuten</li>
+          </ul>
+        </div>
+      </details>
+
+      <!-- Gruppe 3 -->
+      <details>
+        <summary>Gruppe 3 · Werbespot</summary>
+        <div class="content">
+          <h3>Arbeitsauftrag</h3>
+          <p>Erstellt einen Werbespot‑Text (max. 2 Minuten), der das Thema Plattentektonik erklärt. Ihr seid eine Reiseagentur, die spektakuläre Naturereignisse wie Vulkanausbrüche und Erdbeben vermarktet.</p>
+          <ul>
+            <li>🔹 Beantwortet klar: <em>Wie bewegen sich Kontinente und was sind die Folgen?</em></li>
+            <li>🔹 Setzt ChatGPT ein, aber bleibt eigenständig.</li>
+            <li>🔹 Rollenplanung: Reiseleiter:in, Kund:in, Werbestimme usw.</li>
+            <li>🔹 Zeitlimit: max. 2 Minuten</li>
+          </ul>
+        </div>
+      </details>
+
+      <!-- Gruppe 4 -->
+      <details>
+        <summary>Gruppe 4 · Talkshow</summary>
+        <div class="content">
+          <h3>Arbeitsauftrag</h3>
+          <p>Gestaltet eine kurze Talkshow (max. 2 Minuten) zum Thema Klimawandel und erneuerbare Energien.</p>
+          <ul>
+            <li>🔹 Beantwortet klar: <em>Wie sieht die Energieversorgung der Zukunft aus?</em></li>
+            <li>🔹 Kreativ bleiben, ChatGPT nur als Unterstützung.</li>
+            <li>🔹 Rollen: Moderator:in und Expert:in für erneuerbare Energien.</li>
+            <li>🔹 Zeitlimit: max. 2 Minuten</li>
+          </ul>
+        </div>
+      </details>
+
+      <!-- Gruppe 5 -->
+      <details>
+        <summary>Gruppe 5 · Nachrichtensendung</summary>
+        <div class="content">
+          <h3>Arbeitsauftrag</h3>
+          <p>Erstellt eine kurze Nachrichtensendung (max. 2 Minuten) über die Erfindung des Buchdrucks durch Johannes Gutenberg.</p>
+          <ul>
+            <li>🔹 Beantwortet klar: <em>Warum war Gutenbergs Erfindung so revolutionär?</em></li>
+            <li>🔹 ChatGPT nutzen, aber eigene Ideen einfließen lassen.</li>
+            <li>🔹 Rollen: Nachrichtensprecher:in, Augenzeug:in/Expert:in, Live‑Schaltung in die Werkstatt.</li>
+            <li>🔹 Zeitlimit: max. 2 Minuten</li>
+          </ul>
+        </div>
+      </details>
+
+      <!-- Platzhalter 6‑8 -->
+      <details>
+        <summary>Gruppe 6</summary>
+        <div class="content placeholder">
+          <p>Arbeitsauftrag folgt …</p>
+        </div>
+      </details>
+      <details>
+        <summary>Gruppe 7</summary>
+        <div class="content placeholder">
+          <p>Arbeitsauftrag folgt …</p>
+        </div>
+      </details>
+      <details>
+        <summary>Gruppe 8</summary>
+        <div class="content placeholder">
+          <p>Arbeitsauftrag folgt …</p>
+        </div>
+      </details>
+    </section>
+  </main>
+</body>
+</html>
